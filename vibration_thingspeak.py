@@ -1,3 +1,5 @@
+#Reading the change in Vibration Sensor SW-420 and updating that on Thingspeak
+
 import RPi.GPIO as GPIO
 from time import time, sleep
 from urllib.request import urlopen
@@ -8,7 +10,7 @@ channel = 17  #physical pin 11 on raspberry pi
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(channel, GPIO.IN)
 
-WRITE_API = "UE6UU8JFDCIHLVKT" # Replace your ThingSpeak API key here
+WRITE_API = "XXXX" # Replace your ThingSpeak API key here
 BASE_URL = "https://api.thingspeak.com/update?api_key={}".format(WRITE_API)
 
 
