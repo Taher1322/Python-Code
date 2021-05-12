@@ -13,8 +13,8 @@ GPIO.setmode(GPIO.BCM)
 IRsensor =  21
 GPIO.setup(IRsensor, GPIO.IN)
  
-fromaddr = "test2718test@gmail.com"    # change the email address accordingly
-toaddr = "electrofunedu@gmail.com"
+fromaddr = ""    #Enter the sendor Email ID
+toaddr = ""      #Enter the receiver Email ID 
  
 mail = MIMEMultipart()
  
@@ -28,7 +28,7 @@ def sendMail():
     mail.attach(MIMEText(body, 'plain'))
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(fromaddr, "Your password here")
+    server.login(fromaddr, "Your password here")    #Enter the password of sensor email id
     text = "Door Open"
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
